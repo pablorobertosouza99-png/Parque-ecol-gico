@@ -1,0 +1,25 @@
+# Dependências
+**/node_modules/
+
+# Senhas e segredos
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Bancos de dados
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Chaves e credenciais
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Arquivos temporários
+.DS_Store
+Thumbs.db

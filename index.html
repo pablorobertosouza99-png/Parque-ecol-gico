@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name=""viewport"
+        content="widht=device-width,initial-scale=1.o"></meta>
+        <title>Parque Ecológico Paraiso verde</title>
+
+            <link rel="stylesheet"
+            href="style.css">
+    </head>
+    <body>
+        
+<!-- Slider -->
+<section class="slider" id="home">
+<div class="slide active" id="slide-1">
+    <img src="img/cachoeira.jpg"
+    alt="cachoeira do parque"
+    class="slide-image">
+<div class="slide-content">
+<h2 id="slide-1-title">🌿 Bem-vindos ao Paraíso Verde</h2>
+<p id="slide-1-description">Descubra a beleza natural de Teresópolis em nosso parque
+ecológico com mais de 500 hectares de Mata Atlântica preservada</p>
+<div class="slide-info">
+<span id="slide-1-info1">📍 Serra dos Órgãos</span>
+<span id="slide-1-info2">🌡️ Clima ameno o ano todo</span>
+<span id="slide-1-info3">🕒 Aberto todos os dias</span>
+</div>
+<a href="#about" class="btn">Explore Agora</a>
+</div>
+</div>
+<div class="slide" id="slide-2">
+<div class="slide-content">
+<h2 id="slide-2-title">💧 Cachoeiras Cristalinas</h2>
+<p id="slide-2-description">Banhe-se em águas puras e geladas vindas diretamente da
+serra, com 8 cachoeiras catalogadas em nosso território</p>
+<div class="slide-info">
+<span id="slide-2-info1">🏊‍♂️ Piscinas naturais</span>
+<span id="slide-2-info2">🌊 Água mineral pura</span>
+<span id="slide-2-info3">📸 Cenários únicos</span>
+</div>
+<a href="#activities" class="btn">Conheça as Cachoeiras</a>
+</div>
+</div>
+<div class="slide" id="slide-3">
+<div class="slide-content">
+<h2 id="slide-3-title">🥾 Trilhas Ecológicas Guiadas</h2>
+<p id="slide-3-description">Percursos com diferentes níveis de dificuldade,
+acompanhados por guias especializados em fauna e flora local</p>
+<div class="slide-info">
+<span id="slide-3-info1">🗺️ 12 trilhas mapeadas</span>
+<span id="slide-3-info2">👥 Guias especializados</span>
+<span id="slide-3-info3">⏱️ 1h a 6h de duração</span>
+</div>
+<a href="#contact" class="btn">Agende sua Trilha</a>
+</div>
+</div>
+<div class="slide" id="slide-4">
+<div class="slide-content"> <h2 id="slide-4-title">🦅 Observação de Aves</h2>
+<p id="slide-4-description">Mais de 200 espécies de aves catalogadas, incluindo
+espécies endêmicas da Mata Atlântica e aves migratórias</p>
+<div class="slide-info">
+<span id="slide-4-info1">🔭 Binóculos disponíveis</span>
+<span id="slide-4-info2">📚 Guia de identificação</span>
+<span id="slide-4-info3">🌅 Melhores horários: 6h-9h</span>
+</div>
+<a href="#contact" class="btn">Reserve seu Tour</a>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="main-content">
+<section class="welcome-section" id="about">
+<h2 id="welcome-title">Preserve, Explore, Conecte-se</h2>
+<p id="welcome-text">Nosso parque ecológico oferece uma experiência única de contato
+com a natureza, combinando conservação ambiental, educação e turismo sustentável no
+coração da Serra dos Órgãos.</p>
+</section>
+<div class="features" id="activities">
+<div class="feature-card">
+<div class="feature-icon" id="activity-1-icon">🌳</div>
+<h3 id="activity-1-title">Trilhas Ecológicas</h3>
+<p id="activity-1-description">Percursos guiados pela Mata Atlântica com diferentes
+níveis de dificuldade</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon" id="activity-2-icon">💧</div>
+<h3 id="activity-2-title">Cachoeiras Cristalinas</h3>
+<p id="activity-2-description">Banhos refrescantes em águas puras da serra</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon" id="activity-3-icon">🦅</div>
+<h3 id="activity-3-title">Observação de Aves</h3>
+<p id="activity-3-description">Mais de 200 espécies catalogadas em nosso território</p>
+</div>
+</div>
+<!-- Modal de Login -->
+<div class="modal-overlay" id="login-modal"> <div class="login-form" id="login-form">
+<button class="close-modal" onclick="closeLoginModal()">&times;</button>
+<h3>🔐 Acesso Administrativo</h3>
+<form onsubmit="adminLogin(event)">
+<div class="form-group">
+<label for="admin-username">Usuário:</label>
+<input type="text" id="admin-username" required>
+</div>
+<div class="form-group">
+<label for="admin-password">Senha:</label>
+<input type="password" id="admin-password" required>
+</div>
+<button type="submit" class="btn" id="login-btn">
+<span id="login-text">Entrar</span>
+<span id="login-loading" class="loading" style="display: none;"></span>
+</button>
+</form>
+<div style="margin-top: 1rem; padding: 1rem; background: #e2e8f0; border-radius: 8px;
+font-size: 0.9rem;">
+<strong>Credenciais de demonstração:</strong><br>
+Usuário: admin<br>
+Senha: parque123
+</div>
+</div>
+</div>
+<!-- Admin Section -->
+<section class="admin-section" id="admin" style="display: none;">
+<div class="admin-header">
+<h2>🎛️ Painel Administrativo</h2>
+<button class="logout-btn" onclick="adminLogout()">Sair</button>
+</div>
+<div class="dashboard" id="dashboard">
+<div class="admin-header">
+<h2>🎛️ Painel Administrativo</h2>
+<button class="logout-btn" onclick="adminLogout()">Sair</button>
+</div>
+<div class="dashboard-nav">
+<div class="dashboard-tab active" onclick="showDashboardSection('slider')">📸
+Slider</div>
+<div class="dashboard-tab" onclick="showDashboardSection('content')">📝 Conteúdo</div>
+<div class="dashboard-tab" onclick="showDashboardSection('activities')">🎯
+Atividades</div>
+<div class="dashboard-tab" onclick="showDashboardSection('contact')">📞
+Contato</div>
+<div class="dashboard-tab" onclick="showDashboardSection('footer')">🦶
+Rodapé</div>
+<div class="dashboard-tab" onclick="showDashboardSection('announcements')">📢
+Comunicados</div>
+</div>
+<!-- Slider Management -->
+<div class="dashboard-section active" id="slider-section">
+<div class="dashboard-content">
+<h3>🖼️ Gerenciar Slides</h3>
+<div class="slide-manager">
+<div class="slide-item">
+<h4>Slide 1</h4>
+<form onsubmit="updateSlide(event, 1)">
+<div class="form-row">
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="slide-1-title-input" value="🌿 Bem-vindos ao
+Paraíso Verde">
+</div>
+<div class="form-group">
+<label>URL da Imagem:</label>
+<input type="url" id="slide-1-image-input"
+placeholder="https://exemplo.com/imagem.jpg">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="slide-1-desc-input">Descubra a beleza natural de
+Teresópolis em nosso parque ecológico com mais de 500 hectares de Mata Atlântica
+preservada</textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Info 1:</label>
+<input type="text" id="slide-1-info1-input" value="📍 Serra dos
+Órgãos">
+</div> <div class="form-group">
+<label>Info 2:</label>
+<input type="text" id="slide-1-info2-input" value="🌡️ Clima ameno o
+ano todo">
+</div>
+</div>
+<div class="form-group">
+<label>Info 3:</label>
+<input type="text" id="slide-1-info3-input" value="🕒 Aberto todos os
+dias">
+</div>
+<button type="submit" class="btn">Atualizar Slide 1</button>
+</form>
+</div>
+<div class="slide-item">
+<h4>Slide 2</h4>
+<form onsubmit="updateSlide(event, 2)">
+<div class="form-row">
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="slide-2-title-input" value="💧 Cachoeiras
+Cristalinas">
+</div>
+<div class="form-group">
+<label>URL da Imagem:</label>
+<input type="url" id="slide-2-image-input"
+placeholder="https://exemplo.com/imagem.jpg">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="slide-2-desc-input">Banhe-se em águas puras e geladas
+vindas diretamente da serra, com 8 cachoeiras catalogadas em nosso território</textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Info 1:</label>
+<input type="text" id="slide-2-info1-input" value="🏊‍♂️ Piscinas
+naturais">
+</div>
+<div class="form-group">
+<label>Info 2:</label> <input type="text" id="slide-2-info2-input" value="🌊 Água mineral
+pura">
+</div>
+</div>
+<div class="form-group">
+<label>Info 3:</label>
+<input type="text" id="slide-2-info3-input" value="📸 Cenários únicos">
+</div>
+<button type="submit" class="btn">Atualizar Slide 2</button>
+</form>
+</div>
+<div class="slide-item">
+<h4>Slide 3</h4>
+<form onsubmit="updateSlide(event, 3)">
+<div class="form-row">
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="slide-3-title-input" value="🥾 Trilhas Ecológicas
+Guiadas">
+</div>
+<div class="form-group">
+<label>URL da Imagem:</label>
+<input type="url" id="slide-3-image-input"
+placeholder="https://exemplo.com/imagem.jpg">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="slide-3-desc-input">Percursos com diferentes níveis de
+dificuldade, acompanhados por guias especializados em fauna e flora local</textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Info 1:</label>
+<input type="text" id="slide-3-info1-input" value="🗺️ 12 trilhas
+mapeadas">
+</div>
+<div class="form-group">
+<label>Info 2:</label>
+<input type="text" id="slide-3-info2-input" value="👥 Guias
+especializados">
+</div> </div>
+<div class="form-group">
+<label>Info 3:</label>
+<input type="text" id="slide-3-info3-input" value="⏱️ 1h a 6h de
+duração">
+</div>
+<button type="submit" class="btn">Atualizar Slide 3</button>
+</form>
+</div>
+<div class="slide-item">
+<h4>Slide 4</h4>
+<form onsubmit="updateSlide(event, 4)">
+<div class="form-row">
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="slide-4-title-input" value="🦅 Observação de
+Aves">
+</div>
+<div class="form-group">
+<label>URL da Imagem:</label>
+<input type="url" id="slide-4-image-input"
+placeholder="https://exemplo.com/imagem.jpg">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="slide-4-desc-input">Mais de 200 espécies de aves
+catalogadas, incluindo espécies endêmicas da Mata Atlântica e aves migratórias</textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Info 1:</label>
+<input type="text" id="slide-4-info1-input" value="🔭 Binóculos
+disponíveis">
+</div>
+<div class="form-group">
+<label>Info 2:</label>
+<input type="text" id="slide-4-info2-input" value="📚 Guia de
+identificação">
+</div>
+</div>
+<div class="form-group"> <label>Info 3:</label>
+<input type="text" id="slide-4-info3-input" value="🌅 Melhores horários:
+6h-9h">
+</div>
+<button type="submit" class="btn">Atualizar Slide 4</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Management -->
+<div class="dashboard-section" id="content-section">
+<div class="dashboard-content">
+<h3>📝 Gerenciar Conteúdo - Seção Sobre</h3>
+<form onsubmit="updateContent(event, 'about')">
+<div class="form-group">
+<label>Título da Seção Sobre:</label>
+<input type="text" id="about-title-input" value="Preserve, Explore,
+Conecte-se">
+</div>
+<div class="form-group">
+<label>Texto da Seção Sobre:</label>
+<textarea id="about-text-input" style="height: 120px;">Nosso parque ecológico
+oferece uma experiência única de contato com a natureza, combinando conservação
+ambiental, educação e turismo sustentável no coração da Serra dos Órgãos.</textarea>
+</div>
+<button type="submit" class="btn">Atualizar Seção Sobre</button>
+</form>
+</div>
+</div>
+<!-- Activities Management -->
+<div class="dashboard-section" id="activities-section">
+<div class="dashboard-content">
+<h3>🎯 Gerenciar Atividades</h3>
+<div class="slide-manager">
+<div class="slide-item">
+<h4>Atividade 1</h4>
+<form onsubmit="updateActivity(event, 1)">
+<div class="form-row">
+<div class="form-group">
+<label>Ícone (emoji):</label> <input type="text" id="activity-1-icon-input" value="🌳">
+</div>
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="activity-1-title-input" value="Trilhas Ecológicas">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="activity-1-desc-input">Percursos guiados pela Mata
+Atlântica com diferentes níveis de dificuldade</textarea>
+</div>
+<button type="submit" class="btn">Atualizar Atividade 1</button>
+</form>
+</div>
+<div class="slide-item">
+<h4>Atividade 2</h4>
+<form onsubmit="updateActivity(event, 2)">
+<div class="form-row">
+<div class="form-group">
+<label>Ícone (emoji):</label>
+<input type="text" id="activity-2-icon-input" value="💧">
+</div>
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="activity-2-title-input" value="Cachoeiras
+Cristalinas">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="activity-2-desc-input">Banhos refrescantes em águas
+puras da serra</textarea>
+</div>
+<button type="submit" class="btn">Atualizar Atividade 2</button>
+</form>
+</div>
+<div class="slide-item">
+<h4>Atividade 3</h4>
+<form onsubmit="updateActivity(event, 3)">
+<div class="form-row"> <div class="form-group">
+<label>Ícone (emoji):</label>
+<input type="text" id="activity-3-icon-input" value="🦅">
+</div>
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="activity-3-title-input" value="Observação de
+Aves">
+</div>
+</div>
+<div class="form-group">
+<label>Descrição:</label>
+<textarea id="activity-3-desc-input">Mais de 200 espécies catalogadas
+em nosso território</textarea>
+</div>
+<button type="submit" class="btn">Atualizar Atividade 3</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Management -->
+<div class="dashboard-section" id="contact-section">
+<div class="dashboard-content">
+<h3>📞 Gerenciar Informações de Contato</h3>
+<form onsubmit="updateContact(event)">
+<div class="form-row">
+<div class="form-group">
+<label>Telefone:</label>
+<input type="text" id="contact-phone-input" value="(21) 99999-9999">
+</div>
+<div class="form-group">
+<label>Email:</label>
+<input type="email" id="contact-email-input"
+value="contato@parqueeco.com.br">
+</div>
+</div>
+<div class="form-group">
+<label>Endereço:</label>
+<input type="text" id="contact-address-input" value="Estrada do Parque, 123 -
+Teresópolis, RJ">
+</div> <h4>Horários de Funcionamento</h4>
+<div class="form-row">
+<div class="form-group">
+<label>Segunda a Sexta:</label>
+<input type="text" id="hours-weekday-input" value="8h às 17h">
+</div>
+<div class="form-group">
+<label>Sábados e Domingos:</label>
+<input type="text" id="hours-weekend-input" value="7h às 18h">
+</div>
+</div>
+<div class="form-group">
+<label>Feriados:</label>
+<input type="text" id="hours-holiday-input" value="8h às 16h">
+</div>
+<h4>Valores</h4>
+<div class="form-row">
+<div class="form-group">
+<label>Adultos:</label>
+<input type="text" id="price-adult-input" value="R$ 25,00">
+</div>
+<div class="form-group">
+<label>Crianças (6-12 anos):</label>
+<input type="text" id="price-child-input" value="R$ 15,00">
+</div>
+</div>
+<div class="form-group">
+<label>Idosos (60+):</label>
+<input type="text" id="price-senior-input" value="R$ 12,50">
+</div>
+<button type="submit" class="btn">Atualizar Informações de Contato</button>
+</form>
+</div>
+</div>
+<!-- Footer Management -->
+<div class="dashboard-section" id="footer-section">
+<div class="dashboard-content">
+<h3>🦶 Gerenciar Rodapé</h3>
+<form onsubmit="updateFooter(event)">
+<div class="form-group">
+<label>Texto de Copyright:</label>
+<input type="text" id="footer-copyright-input" value="© 2024 Parque Ecológico Teresópolis. Todos os direitos reservados.">
+</div>
+<div class="form-group">
+<label>Slogan do Rodapé:</label>
+<input type="text" id="footer-slogan-input" value="Preservando a natureza
+para as futuras gerações 🌱">
+</div>
+<button type="submit" class="btn">Atualizar Rodapé</button>
+</form>
+</div>
+</div>
+<!-- Announcements Management -->
+<div class="dashboard-section" id="announcements-section">
+<div class="dashboard-content">
+<h3>📢 Gerenciar Comunicados</h3>
+<button class="btn" onclick="toggleAnnouncementForm()" style="margin-bottom:
+2rem;">+ Novo Comunicado</button>
+<div class="slide-item" id="announcement-form" style="display: none;">
+<h4>Adicionar Comunicado</h4>
+<form onsubmit="addAnnouncement(event)">
+<div class="form-group">
+<label>Título:</label>
+<input type="text" id="announcement-title" required>
+</div>
+<div class="form-group">
+<label>Conteúdo:</label>
+<textarea id="announcement-content" required></textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Tipo:</label>
+<select id="announcement-type" required>
+<option value="info">Informação</option>
+<option value="warning">Aviso</option>
+<option value="urgent">Urgente</option>
+</select>
+</div>
+<div class="form-group">
+<label>Prioridade (1-5):</label>
+<input type="number" id="announcement-priority" min="1" max="5"
+value="3" required> </div>
+</div>
+<button type="submit" class="btn" id="submit-btn">
+<span id="submit-text">Publicar Comunicado</span>
+<span id="submit-loading" class="loading" style="display: none;"></span>
+</button>
+<button type="button" class="btn btn-secondary"
+onclick="toggleAnnouncementForm()">Cancelar</button>
+</form>
+</div>
+<div class="announcements" id="announcements">
+<!-- Comunicados serão carregados aqui -->
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+<div class="contact-content">
+<div class="contact-info">
+<h3>📞 Entre em Contato</h3>
+<div class="contact-item">
+<span>📱</span>
+<div>
+<strong>Telefone:</strong><br>
+<span id="contact-phone">(21) 99999-9999</span>
+</div>
+</div>
+<div class="contact-item">
+<span>✉️</span>
+<div>
+<strong>Email:</strong><br>
+<span id="contact-email">contato@parqueeco.com.br</span>
+</div>
+</div>
+<div class="contact-item">
+<span>📍</span>
+<div>
+<strong>Endereço:</strong><br> <span id="contact-address">Estrada do Parque, 123 - Teresópolis, RJ</span>
+</div>
+</div>
+</div>
+<div class="contact-info">
+<h3>🕒 Horário de Funcionamento</h3>
+<p><strong>Segunda a Sexta:</strong> <span id="hours-weekday">8h às
+17h</span></p>
+<p><strong>Sábados e Domingos:</strong> <span id="hours-weekend">7h às
+18h</span></p>
+<p><strong>Feriados:</strong> <span id="hours-holiday">8h às 16h</span></p>
+<br>
+<h3>💰 Valores</h3>
+<p><strong>Adultos:</strong> <span id="price-adult">R$ 25,00</span></p>
+<p><strong>Crianças (6-12 anos):</strong> <span id="price-child">R$
+15,00</span></p>
+<p><strong>Idosos (60+):</strong> <span id="price-senior">R$ 12,50</span></p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<p id="footer-copyright">&copy; 2024 Parque Ecológico Teresópolis. Todos os direitos
+reservados.</p>
+<p id="footer-slogan">Preservando a natureza para as futuras gerações 🌱</p>
+</footer>
+<script>
+// Configuração padrão
+const defaultConfig = {
+park_name: "Parque Ecológico Teresópolis",
+park_tagline: "Natureza, Aventura e Preservação",
+welcome_title: "Preserve, Explore, Conecte-se",
+welcome_text:"Nosso parque ecológico oferce uma experiência única de contato com a natureza,combinando conservação ambiental, educação e turismo sustenável no coração da Serra dos òrgãos.",
+contact_email:"contato@parqueeco.com.br",
+contact_address: "Estrada do Parque, 123 - Teresópolis, RJ",
+background_color: "#f7fafc",
+primary_color: "#2d5016",
+secondary_color: "#4a7c59",
+accent_color: "#e53e3e",
+text_color: "#2d3748",
+font_family: "Segoe UI",
+font_size: 16
+};
+// Variáveis globais
+let announcements = [];
+let currentSlide = 0;
+let isLoggedIn = false;
+const slides = document.querySelectorAll('.slide');
+// Credenciais de demonstração
+const ADMIN_CREDENTIALS = {
+username: 'admin',
+password: 'parque123'
+};
+// Inicialização dos SDKs
+async function initializeApp() {
+// Inicializar Element SDK
+if (window.elementSdk) {
+await window.elementSdk.init({
+defaultConfig,
+onConfigChange: async (config) => {
+// Atualizar textos
+document.getElementById('park-name').textContent = config.park_name ||
+defaultConfig.park_name;
+document.getElementById('park-tagline').textContent = config.park_tagline ||
+defaultConfig.park_tagline;
+document.getElementById('welcome-title').textContent = config.welcome_title ||
+defaultConfig.welcome_title;
+document.getElementById('welcome-text').textContent = config.welcome_text ||
+defaultConfig.welcome_text;
+document.getElementById('contact-phone').textContent = config.contact_phone ||
+defaultConfig.contact_phone;
+document.getElementById('contact-email').textContent = config.contact_email ||
+defaultConfig.contact_email;
+document.getElementById('contact-address').textContent = config.contact_address
+|| defaultConfig.contact_address;
+// Atualizar cores
+const backgroundColor = config.background_color || defaultConfig.background_color;
+const primaryColor = config.primary_color || defaultConfig.primary_color;
+const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+const accentColor = config.accent_color || defaultConfig.accent_color;
+const textColor = config.text_color || defaultConfig.text_color;
+document.body.style.backgroundColor = backgroundColor;
+document.body.style.color = textColor;
+// Atualizar fonte
+const customFont = config.font_family || defaultConfig.font_family;
+const baseSize = config.font_size || defaultConfig.font_size;
+const fontStack = `${customFont}, 'Segoe UI', Tahoma, Geneva, Verdana,
+sans-serif`;
+document.body.style.fontFamily = fontStack;
+document.body.style.fontSize = $(baseSizepx);
+// Aplicar cores aos elementos
+const style = document.createElement('style');
+style.textContent = `
+.header { background: linear-gradient(135deg, ${primaryColor} 0%,
+${secondaryColor} 100%) !important; }
+.btn { background: ${accentColor} !important; }
+.btn:hover { background: ${accentColor}dd !important; }
+.welcome-section h2, .feature-card h3, .announcement h4 { color:
+${primaryColor} !important; }
+.contact-section { background: ${primaryColor} !important; }
+.announcement { border-left-color: ${secondaryColor} !important; }
+`;
+document.head.appendChild(style);
+},
+mapToCapabilities: (config) => ({
+recolorables: [
+{
+get: () => config.background_color || defaultConfig.background_color,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ background_color: value });
+}
+}
+},
+{ get: () => config.primary_color || defaultConfig.primary_color,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ primary_color: value });
+}
+}
+},
+{
+get: () => config.secondary_color || defaultConfig.secondary_color,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ secondary_color: value });
+}
+}
+},
+{
+get: () => config.accent_color || defaultConfig.accent_color,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ accent_color: value });
+}
+}
+},
+{
+get: () => config.text_color || defaultConfig.text_color,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ text_color: value });
+}
+}
+}
+],
+borderables: [],
+fontEditable: {
+get: () => config.font_family || defaultConfig.font_family,
+set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ font_family: value });
+}
+}
+},
+fontSizeable: {
+get: () => config.font_size || defaultConfig.font_size, set: (value) => {
+if (window.elementSdk) {
+window.elementSdk.setConfig({ font_size: value });
+}
+}
+}
+}),
+mapToEditPanelValues: (config) => new Map([
+["park_name", config.park_name || defaultConfig.park_name],
+["park_tagline", config.park_tagline || defaultConfig.park_tagline],
+["welcome_title", config.welcome_title || defaultConfig.welcome_title],
+["welcome_text", config.welcome_text || defaultConfig.welcome_text],
+["contact_phone", config.contact_phone || defaultConfig.contact_phone],
+["contact_email", config.contact_email || defaultConfig.contact_email],
+["contact_address", config.contact_address || defaultConfig.contact_address]
+])
+});
+}
+// Inicializar Data SDK
+if (window.dataSdk) {
+const dataHandler = {
+onDataChanged(data) {
+announcements = data.filter(item => item.data_type === 'announcement')
+.sort((a, b) => b.priority - a.priority || new Date(b.created_at) - new
+Date(a.created_at));
+renderAnnouncements();
+// Carregar dados salvos
+loadSavedData(data);
+}
+};
+const initResult = await window.dataSdk.init(dataHandler);
+if (!initResult.isOk) {
+console.error("Erro ao inicializar Data SDK");
+}
+}
+}
+// Funções do modal
+function openLoginModal(event) {
+event.preventDefault(); document.getElementById('login-modal').classList.add('active');
+document.body.style.overflow = 'hidden'; // Prevenir scroll do body
+}
+function closeLoginModal() {
+document.getElementById('login-modal').classList.remove('active');
+document.body.style.overflow = 'auto'; // Restaurar scroll do body
+// Limpar campos
+document.getElementById('admin-username').value = '';
+document.getElementById('admin-password').value = '';
+}
+// Fechar modal ao clicar no overlay
+document.addEventListener('click', function(event) {
+const modal = document.getElementById('login-modal');
+if (event.target === modal) {
+closeLoginModal();
+}
+});
+// Fechar modal com tecla ESC
+document.addEventListener('keydown', function(event) {
+if (event.key === 'Escape') {
+closeLoginModal();
+}
+});
+// Funções de login
+function adminLogin(event) {
+event.preventDefault();
+const username = document.getElementById('admin-username').value;
+const password = document.getElementById('admin-password').value;
+const loginBtn = document.getElementById('login-btn');
+const loginText = document.getElementById('login-text');
+const loginLoading = document.getElementById('login-loading');
+// Mostrar loading
+loginBtn.disabled = true;
+loginText.style.display = 'none';
+loginLoading.style.display = 'inline-block'; // Simular verificação (em produção seria uma API)
+setTimeout(() => {
+if (username === ADMIN_CREDENTIALS.username && password ===
+ADMIN_CREDENTIALS.password) {
+isLoggedIn = true;
+closeLoginModal(); // Fechar modal
+document.getElementById('admin').style.display = 'block'; // Mostrar dashboard
+document.getElementById('dashboard').classList.add('active');
+// Scroll para a seção admin
+document.getElementById('admin').scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+showToast("Login realizado com sucesso!", "success");
+} else {
+showToast("Credenciais inválidas!", "error");
+}
+// Esconder loading
+loginBtn.disabled = false;
+loginText.style.display = 'inline';
+loginLoading.style.display = 'none';
+}, 1000);
+}
+function adminLogout() {
+isLoggedIn = false;
+document.getElementById('admin').style.display = 'none'; // Esconder dashboard
+document.getElementById('dashboard').classList.remove('active');
+document.getElementById('admin-username').value = '';
+document.getElementById('admin-password').value = '';
+showToast("Logout realizado com sucesso!", "success");
+// Scroll para o topo
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+}
+// Funções do dashboard function showDashboardSection(section) {
+// Remover classe active de todas as abas e seções
+document.querySelectorAll('.dashboard-tab').forEach(tab => tab.classList.remove('active'));
+document.querySelectorAll('.dashboard-section').forEach(sec =>
+sec.classList.remove('active'));
+// Ativar aba e seção selecionadas
+event.target.classList.add('active');
+document.getElementById(section + '-section').classList.add('active');
+// Funções de atualização
+async function updateSlide(event, slideNumber) {
+event.preventDefault();
+if (!isLoggedIn) return;
+const title = document.getElementById ('slide-${slideNumber}-title-input').value;
+const description = document.getElementById('slide-${slideNumber}-desc-input').value;
+const info1 = document.getElementById('slide-${slideNumber}-info1-input').value;
+const info2 = document.getElementById('slide-${slideNumber}-info2-input').value;
+const info3 = document.getElementById('slide-${slideNumber}-info3-input').value;
+const imageUrl = document.getElementById('slide-${slideNumber}-image-input').value;
+// Atualizar elementos do slide
+document.getElementById('slide-${slideNumber}-title').textContent = title;
+document.getElementById('slide-${slideNumber}-description').textContent = description;
+document.getElementById('slide-${slideNumber}-info1').textContent = info1;
+document.getElementById('slide-${slideNumber}-info2').textContent = info2;
+document.getElementById('slide-${slideNumber}-info3').textContent = info3;
+// Atualizar imagem de fundo se fornecida
+if (imageUrl) {
+const slide = document.getElementById('slide-${slideNumber}');
+slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url('${imageUrl}')`;
+}
+// Salvar no Data SDK
+if (window.dataSdk) {
+const slideData = {
+    id: 'slide-${slideNumber}-${Date.now()},'
+    data_type:'slide',
+    section:'slide-${slideNumber}',
+    title:'title'
+    content:description,
+    field_name:'slide_data',
+    field_name:'slide_data',
+    field_value:JSON.stringify({
+        title,description,info1,info2,info3,imageUrl
+    }),
+    created_at:new Date().toISOString()
+};
+await window.dataSdk.create(slideData);
+}
+showToast('Slide ${slideNumber} atualizado com sucesso!,'"success");
+async function updateContent(event, section) {
+event.preventDefault();
+if (!isLoggedIn) return;
+if (section === 'about') {
+const title = document.getElementById('about-title-input').value;
+const text = document.getElementById('about-text-input').value;
+document.getElementById('welcome-title').textContent = title;
+document.getElementById('welcome-text').textContent = text;
+// Salvar no Data SDK
+if (window.dataSdk) {
+const aboutData = {
+id: about-${(Date,now)};
+data_type: 'content',
+section; 'about',
+title,
+content; text,
+created_at; new Date().toISOString()
+};
+await window.dataSdk.create(aboutData);
+}
+showToast("Seção Sobre atualizada com sucesso!", "success");
+}
+} async function updateActivity(event, activityNumber) {
+event.preventDefault();
+if (!isLoggedIn) return;
+const icon = document.getElementById(activity-${activityNumber}-icon-input).value;
+const title = document.getElementById(activity-${activityNumber}-title-input).value;
+const description =
+document.getElementById(activity-${activityNumber}-desc-input).value;
+document.getElementById(activity-${activityNumber}-icon).textContent = icon;
+document.getElementById(activity-${activityNumber}-title).textContent = title;
+document.getElementById(activity-${activityNumber}-description).textContent =
+description;
+// Salvar no Data SDK
+if (window.dataSdk) {
+const activityData = {
+id: activity-${activityNumber}-${Date.now()},
+data_type: 'activity',
+section: activity-${activityNumber},
+title,
+content: description,
+field_name: 'activity_data',
+field_value: JSON.stringify({ icon, title, description }),
+created_at: new Date().toISOString()
+};
+await window.dataSdk.create(activityData);
+}
+showToast(Atividade ${activityNumber} atualizada com sucesso!, "success");
+}
+async function updateContact(event) {
+event.preventDefault();
+if (!isLoggedIn) return;
+const phone = document.getElementById('contact-phone-input').value;
+const email = document.getElementById('contact-email-input').value;
+const address = document.getElementById('contact-address-input').value; const hoursWeekday = document.getElementById('hours-weekday-input').value;
+const hoursWeekend = document.getElementById('hours-weekend-input').value;
+const hoursHoliday = document.getElementById('hours-holiday-input').value;
+const priceAdult = document.getElementById('price-adult-input').value;
+const priceChild = document.getElementById('price-child-input').value;
+const priceSenior = document.getElementById('price-senior-input').value;
+// Atualizar elementos
+document.getElementById('contact-phone').textContent = phone;
+document.getElementById('contact-email').textContent = email;
+document.getElementById('contact-address').textContent = address;
+document.getElementById('hours-weekday').textContent = hoursWeekday;
+document.getElementById('hours-weekend').textContent = hoursWeekend;
+document.getElementById('hours-holiday').textContent = hoursHoliday;
+document.getElementById('price-adult').textContent = priceAdult;
+document.getElementById('price-child').textContent = priceChild;
+document.getElementById('price-senior').textContent = priceSenior;
+// Salvar no Data SDK
+if (window.dataSdk) {
+const contactData = {
+id: contact-${Date.now()},
+data_type: 'contact',
+section: 'contact',
+title: 'Contact Information',
+content: 'Contact details and pricing',
+field_name: 'contact_data',
+field_value: JSON.stringify({
+phone, email, address, hoursWeekday, hoursWeekend,
+hoursHoliday, priceAdult, priceChild, priceSenior
+}),
+created_at: new Date().toISOString()
+};
+await window.dataSdk.create(contactData);
+}
+showToast("Informações de contato atualizadas com sucesso!", "success");
+}
+async function updateFooter(event) {
+event.preventDefault(); if (!isLoggedIn) return;
+const copyright = document.getElementById('footer-copyright-input').value;
+const slogan = document.getElementById('footer-slogan-input').value;
+document.getElementById('footer-copyright').textContent = copyright;
+document.getElementById('footer-slogan').textContent = slogan;
+// Salvar no Data SDK
+if (window.dataSdk) {
+const footerData = {
+id: footer-${Date.now()},
+data_type: 'footer',
+section: 'footer',
+title: 'Footer Information',
+content: slogan,
+field_name: 'footer_data',
+field_value: JSON.stringify({ copyright, slogan }),
+created_at: new Date().toISOString()
+};
+await window.dataSdk.create(footerData);
+}
+showToast("Rodapé atualizado com sucesso!", "success");
+}
+// Funções de comunicados
+function toggleAnnouncementForm() {
+const form = document.getElementById('announcement-form');
+form.style.display = form.style.display === 'none' ? 'block' : 'none';
+if (form.style.display === 'none') {
+document.querySelector('#announcement-form form').reset();
+}
+}
+async function addAnnouncement(event) {
+event.preventDefault();
+if (!isLoggedIn) return;
+if (announcements.length >= 999) {
+showToast("Limite máximo de 999 comunicados atingido. Exclua alguns comunicados primeiro.", "error");
+return;
+}
+const submitBtn = document.getElementById('submit-btn');
+const submitText = document.getElementById('submit-text');
+const submitLoading = document.getElementById('submit-loading');
+// Mostrar loading
+submitBtn.disabled = true;
+submitText.style.display = 'none';
+submitLoading.style.display = 'inline-block';
+const title = document.getElementById('announcement-title').value;
+const content = document.getElementById('announcement-content').value;
+const type = document.getElementById('announcement-type').value;
+const priority = parseInt(document.getElementById('announcement-priority').value);
+const newAnnouncement = {
+id: Date.now().toString(),
+data_type: 'announcement',
+title,
+content,
+type,
+priority,
+created_at: new Date().toISOString()
+};
+if (window.dataSdk) {
+const result = await window.dataSdk.create(newAnnouncement);
+if (result.isOk) {
+showToast("Comunicado publicado com sucesso!", "success");
+toggleAnnouncementForm();
+} else {
+showToast("Erro ao publicar comunicado. Tente novamente.", "error");
+}
+}
+// Esconder loading
+submitBtn.disabled = false;
+submitText.style.display = 'inline';
+submitLoading.style.display = 'none'; }
+async function deleteAnnouncement(announcement) {
+if (!isLoggedIn) return;
+if (window.dataSdk) {
+const result = await window.dataSdk.delete(announcement);
+if (result.isOk) {
+showToast("Comunicado excluído com sucesso!", "success");
+} else {
+showToast("Erro ao excluir comunicado.", "error");
+}
+}
+}
+function renderAnnouncements() {
+const container = document.getElementById('announcements');
+if (announcements.length === 0) {
+container.innerHTML = '<p style="text-align: center; color: #718096;">Nenhum
+comunicado publicado ainda.</p>';
+return;
+}
+container.innerHTML = announcements.map(announcement => {
+const date = new Date(announcement.created_at).toLocaleDateString('pt-BR');
+const typeEmoji = {
+'info': 'ℹ️',
+'warning': '⚠️',
+'urgent': '🚨'
+};
+return `
+<div class="announcement">
+<div class="announcement-header">
+<h4>${typeEmoji[announcement.type]} ${announcement.title}</h4>
+<button class="delete-btn"
+onclick="deleteAnnouncement(${JSON.stringify(announcement).replace(/"/g, '&quot;')})">
+Excluir
+</button>
+</div>
+<p>${announcement.content}</p>
+<div class="announcement-meta"> Prioridade: ${announcement.priority} | Publicado em: ${date}
+</div>
+</div>
+`;
+}).join('');
+}
+// Carregar dados salvos
+function loadSavedData(data) {
+data.forEach(item => {
+try {
+if (item.data_type === 'slide' && item.field_value) {
+const slideData = JSON.parse(item.field_value);
+const slideNumber = item.section.split('-')[1];
+if (slideData.title)
+document.getElementById(slide-${slideNumber}-title).textContent = slideData.title;
+if (slideData.description)
+document.getElementById(slide-${slideNumber}-description).textContent =
+slideData.description;
+if (slideData.info1)
+document.getElementById(slide-${slideNumber}-info1).textContent = slideData.info1;
+if (slideData.info2)
+document.getElementById(slide-${slideNumber}-info2).textContent = slideData.info2;
+if (slideData.info3)
+document.getElementById(slide-${slideNumber}-info3).textContent = slideData.info3;
+if (slideData.imageUrl) {
+const slide = document.getElementById(slide-${slideNumber});
+slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url('${slideData.imageUrl}')`;
+}
+}
+if (item.data_type === 'content' && item.section === 'about') {
+if (item.title) document.getElementById('welcome-title').textContent = item.title;
+if (item.content) document.getElementById('welcome-text').textContent =
+item.content;
+}
+if (item.data_type === 'activity' && item.field_value) {
+const activityData = JSON.parse(item.field_value);
+const activityNumber = item.section.split('-')[1]; if (activityData.icon)
+document.getElementById(activity-${activityNumber}-icon).textContent = activityData.icon;
+if (activityData.title)
+document.getElementById(activity-${activityNumber}-title).textContent = activityData.title;
+if (activityData.description)
+document.getElementById(activity-${activityNumber}-description).textContent =
+activityData.description;
+}
+if (item.data_type === 'contact' && item.field_value) {
+const contactData = JSON.parse(item.field_value);
+if (contactData.phone) document.getElementById('contact-phone').textContent =
+contactData.phone;
+if (contactData.email) document.getElementById('contact-email').textContent =
+contactData.email;
+if (contactData.address) document.getElementById('contact-address').textContent
+= contactData.address;
+if (contactData.hoursWeekday)
+document.getElementById('hours-weekday').textContent = contactData.hoursWeekday;
+if (contactData.hoursWeekend)
+document.getElementById('hours-weekend').textContent = contactData.hoursWeekend;
+if (contactData.hoursHoliday)
+document.getElementById('hours-holiday').textContent = contactData.hoursHoliday;
+if (contactData.priceAdult) document.getElementById('price-adult').textContent =
+contactData.priceAdult;
+if (contactData.priceChild) document.getElementById('price-child').textContent =
+contactData.priceChild;
+if (contactData.priceSenior) document.getElementById('price-senior').textContent =
+contactData.priceSenior;
+}
+if (item.data_type === 'footer' && item.field_value) {
+const footerData = JSON.parse(item.field_value);
+if (footerData.copyright) document.getElementById('footer-copyright').textContent =
+footerData.copyright;
+if (footerData.slogan) document.getElementById('footer-slogan').textContent =
+footerData.slogan;
+}
+} catch (error) {
+console.error('Erro ao carregar dados salvos:', error); }
+});
+}
+// Slider automático
+function nextSlide() {
+slides[currentSlide].classList.remove('active');
+currentSlide = (currentSlide + 1) % slides.length;
+slides[currentSlide].classList.add('active');
+}
+setInterval(nextSlide, 6000);
+function showToast(message, type) {
+const toast = document.createElement('div');
+toast.style.cssText = `
+position: fixed;
+top: 20px;
+right: 20px;
+background: ${type === 'success' ? '#48bb78' : '#e53e3e'};
+color: white;
+padding: 1rem 2rem;
+border-radius: 8px;
+z-index: 1000;
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+`;
+toast.textContent = message;
+document.body.appendChild(toast);
+setTimeout(() => {
+toast.remove();
+}, 3000);
+}
+// Smooth scroll para navegação
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start' });
+}
+});
+});
+// Inicializar aplicação
+document.addEventListener('DOMContentLoaded', initializeApp);
+</script>
+
+</body>
+</html>
